@@ -6,6 +6,7 @@ import {
   UPDATE_CURRENT_CATEGORY,
 } from '../../utils/actions';
 import { QUERY_CATEGORIES } from '../../utils/queries';
+import './style.css';
 
 function CategoryMenu() {
   const dispatch = useDispatch();
@@ -22,12 +23,10 @@ function CategoryMenu() {
         categories: categoryData.categories,
       });
     } else if (!loading) {
-
-        dispatch({
-          type: UPDATE_CATEGORIES,
-          categories: categories,
-        });
-
+      dispatch({
+        type: UPDATE_CATEGORIES,
+        categories: categories,
+      });
     }
   }, [categoryData, loading, dispatch]);
 
@@ -39,25 +38,27 @@ function CategoryMenu() {
   };
 
   return (
-    <div>
-      <h2>Choose a Category:</h2>
-      {categories.map((item) => (
-        <button
-          key={item._id}
+    <div className="category-container">
+      <h2 className="category-header">Choose a Category:</h2>
+      <div className='category-list'>
+        {categories.map((item) => (
+          <button
+            key={item._id}
+            onClick={() => {
+              handleClick(item._id);
+            }}
+          >
+            {item.name}
+          </button>
+        ))}
+      <button
           onClick={() => {
-            handleClick(item._id);
+            handleClick('');
           }}
         >
-          {item.name}
+          All
         </button>
-      ))}
-     <button
-        onClick={() => {
-          handleClick('');
-        }}
-      >
-        All
-      </button>
+      </div>
     </div>
   );
 }

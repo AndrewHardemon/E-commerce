@@ -1,0 +1,7 @@
+.hero {
+    background: url(../assets/img/hero.jpeg) no-repeat center center/cover;
+    height: 25vh;
+    margin: 0px;
+    object-fit: contain;
+    object-position: 50% 50%;
+}

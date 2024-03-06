@@ -12,6 +12,8 @@ import store from './utils/store';
 
 import Nav from './components/Nav';
 
+import "./styles/App.css"
+
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -37,6 +39,7 @@ function App() {
       <div>
         <Provider store={store}>
           <Nav />
+          <figure className="hero"></figure>
           <Outlet /> 
         </Provider>
       </div>

@@ -1,0 +1,26 @@
+.category-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--spacing-two);
+  margin-bottom: var(--spacing-two);
+  margin: 10px 0px;
+}
+
+.category-header {
+  width: 30%;
+}
+
+.category-list {
+    display: flex
+}
+
+.category-list button {
+  border-radius: 10px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  margin: 0 1px;
+  height: 35px;
+}
+
+
